@@ -1,0 +1,29 @@
+Guía rápida para Windows
+Instalar Python
+    Descarga desde python.org (x64).
+    Marca “Add Python to PATH” en el instalador.
+
+Abrir PowerShell (Win + X → Windows PowerShell) y crear un entorno:
+    cd C:\ruta\al\proyecto\red_semantica
+    py -m venv .venv
+    .\.venv\Scripts\Activate.ps1
+    # Si PowerShell bloquea la activación:
+    # Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Actualizar pip y herramientas:
+    python -m pip install --upgrade pip setuptools wheel
+
+Instalar dependencias del proyecto:
+    pip install -r requirements.txt
+
+
+(Opcional, para el layout jerárquico de Graphviz)
+Instala Graphviz para Windows (MSI desde la web oficial).
+Verifica en una nueva terminal:
+    dot -V
+Si dice “not recognized”, agrega a PATH (ejemplo):
+    C:\Program Files\Graphviz\bin
+
+y vuelve a abrir la terminal. Luego:
+    pip install pydot
+
